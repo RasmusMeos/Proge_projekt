@@ -35,12 +35,12 @@ if score == 0:
                 print("Võitsite selle korra, sest viskasite arvutist rohkem silmi.")
                 print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja arvutil on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
                 
-            if ((mängija_skoor == maksimum_punktid or mängija_skoor > maksimum_punktid) or (arvuti_skoor == maksimum_punktid or arvuti_skoor > maksimum_punktid)) and mängija_skoor > arvuti_skoor:
+            if (mängija_skoor >= maksimum_punktid) or (arvuti_skoor >= maksimum_punktid) and mängija_skoor > arvuti_skoor:
                 print("Hästi tehtud! Said arvutist enne 30 silma kokku ning seega kuulub mänguvõit sulle!")
                 print("Lõpptulemuseks jäi",mängija_skoor,"silma teile ja",arvuti_skoor,"silma arvutile.")
                 score == 1
                 break
-            elif ((mängija_skoor == maksimum_punktid or mängija_skoor > maksimum_punktid) or (arvuti_skoor == maksimum_punktid or arvuti_skoor > maksimum_punktid)) and mängija_skoor > arvuti_skoor and mängija_skoor < arvuti_skoor:
+            elif (mängija_skoor >= maksimum_punktid  or arvuti_skoor >= maksimum_punktid) and mängija_skoor < arvuti_skoor:
                 print("Lõpptulemuseks jäi",mängija_skoor,"silma teile ja",arvuti_skoor,"silma arvutile.")
                 print("Proovige uuesti! Arvuti sai teist enne 30 silma kokku.")
 
