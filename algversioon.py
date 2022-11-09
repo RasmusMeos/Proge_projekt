@@ -20,6 +20,8 @@ if score == 0:
             print("Arvuti veeretas:",arvuti_tulemus)
 
             if mängija_tulemus == arvuti_tulemus:
+                mängija_skoor += mängija_tulemus
+                arvuti_skoor += arvuti_tulemus
                 print("Viskasite sellel korral arvutiga sama arvu silmi.")
                 print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja arvutil on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
             elif mängija_tulemus < arvuti_tulemus:
