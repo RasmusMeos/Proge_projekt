@@ -60,3 +60,5 @@ if score == 1:
           print("Lõppseis jäi:", mäs,":",ars)
           mäs = 0
           ars = 0
+if score == 2:
+  
