@@ -31,6 +31,7 @@ while True:
     elif mängija_valik == "käärid" and arvuti_valik == "kivi":
         ars += 1
         print("Kivi lõhub käärid - arvuti võit!")
+        print("Seis on",mäs,":",ars)
 
     elif mängija_valik == "paber" and arvuti_valik == "kivi":
         mäs += 1
@@ -41,14 +42,21 @@ while True:
         print("Käärid lõikavad paberi - arvuti võit!")
         print("Seis on",mäs,":",ars)
 
-    if mäs == võite_vaja or ars == võite_vaja:
+    if (mäs == võite_vaja or ars == võite_vaja) and mäs > ars:
+        print("Õnnitlused, oled võitnud kolme võiduni mängitava seeria!")
+        print("Lõppseis jäi:",mäs,":",ars)
         break
+    elif (mäs == võite_vaja or ars == võite_vaja) and mäs < ars:
+        print("Proovi uuesti! Arvuti võitis selle kolme võiduni mängitava seeria.")
+        print("Lõppseis jäi:",mäs,":",ars)
+        mäs = 0
+        ars = 0 
 
-if mäs > ars:
-    print("Õnnitlused, oled võitnud kolme võiduni mängitava seeria!")
-    print("Lõppseis jäi:",mäs,":",ars)
-else:
-    print("Proovi uuesti! Arvuti võitis selle kolme võiduni mängitava seeria.")
+#if mäs > ars:
+ #   print("Õnnitlused, oled võitnud kolme võiduni mängitava seeria!")
+  #  print("Lõppseis jäi:",mäs,":",ars)
+#else:
+#    print("Proovi uuesti! Arvuti võitis selle kolme võiduni mängitava seeria.")
 
 
 
