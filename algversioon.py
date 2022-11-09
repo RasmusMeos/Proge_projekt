@@ -7,4 +7,7 @@
    # if score == 0:
    #     siia tuleks sinu mäng
   #  if score == 1:
-        
+    
+
+
+#testiks, et muudan faili sisu
