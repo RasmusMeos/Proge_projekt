@@ -10,3 +10,12 @@ while skoor<3 and fail_count!=5:
         skoor+=1
         print('WooHoo! Sa valisid samma number kui arvuti')
         print('Sul on nüüd',skoor,'punkti')
+    if valik!=arvut:
+        fail_count+=1
+        print('oh man! Arvut oli valinud teine number!')
+        print('See kord ei saa punkti :(')
+
+if skoor==3:
+    print('Sa oled võitja! :)')
+if skoor<3:
+    print('kahjuks oled kaotunud :(')
