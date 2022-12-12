@@ -1,5 +1,15 @@
 import random
 
+nimi=input("Mis sinu nimi on? ")
+print(f"Tere tulemast {nimi}!")
+print()
+info=input("Kas soovid mängu infot lugeda('Jah' või 'Ei')? ")
+if info == "Ei":
+    print()
+if info == "Jah":
+    print(" insert mängu info ")
+
+
 score = 0
 #health = 100
 
@@ -201,9 +211,15 @@ if score == 2:
 score = 3
 
 if score == 3:
+    score=4 # <- annab error et indent on vaja siis pannin lihtsalt score on 4 et saada errorist lahti
+    # siia eelviimane mäng
+
+score = 4
+
+if score == 4:
     skoor = 0
     fail_count = 0
-    print("""Järgmise mängu nimi on "Paintball". Võida see mäng ja oledki finish'is!""")
+    print("""Sattusid ukse taha, aga luuk on ukse ees! \nluku kood on 3 numbrit \nsaad lukku lahti ja oledki valjas!""")
 
     while skoor < 3 and fail_count != 5:
         valik = input('Vali number 1 kuni 3: ')
