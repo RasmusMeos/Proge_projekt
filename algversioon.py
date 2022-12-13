@@ -1,5 +1,15 @@
 import random
 
+nimi=input("Mis sinu nimi on? ")
+print(f"Tere tulemast {nimi}!")
+print()
+info=input("Kas soovid mängu infot lugeda('Jah' või 'Ei')? ")
+if info == "Ei":
+    print()
+if info == "Jah":
+    print(" insert mängu info ")
+
+inventory=[]
 score = 0
 #health = 100
 
@@ -118,7 +128,9 @@ if score == 2:
         'meri':'780',
         'arv':'2222'
         }
-    print('Oled joudnud Eesti kohta Trivia mängu! Kui saate 10-st küsimusest vähemalt 8 õigesti, oled sa võitnud.')
+    print('Lõpuks jõudsid külla kus leijad üks vanatädi kes teab kuidas leida see varandus mis sa otsid, \nta ütleb sulle')
+    print(' ')
+    print('"Kui soovid varandus leida, on sul aardekaart vaja. \nKui saate 10-st küsimusest vähemalt 8 õigesti, ma annan seda sulle"')
 
     while trivia_score<11:
         üks=input('Mis on Eesti pealinn? ')
@@ -126,101 +138,118 @@ if score == 2:
             trivia_score+=1
             print('Sa said õige vastus!')
         if üks!=trivia['linn']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kaks=input('Mis aastal kuulutati välja Eesti vabariik? ')
         if kaks==trivia['vaba']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kaks!=trivia['vaba']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kolm=input('Mis on Eestil kõige suurem saar? ')
         if kolm==trivia['saar']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kolm!=trivia['saar']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         neli=input('Mis on Eestil kõige vanem linn? ')
         if neli==trivia['linn']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if neli!=trivia['linn']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         viis=input('Mis oli Eestil külmarekord? ')
         if viis==trivia['rekord']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if viis!=trivia['rekord']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kuus=input('Mitu meetrit on kõige kõrgem juga Eestis? ')
         if kuus==trivia['juga']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kuus!=trivia['juga']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         seitse=input('Mis on kõige pikem jõgi Eestis? ')
         if seitse==trivia['jõgi']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if seitse!=trivia['jõgi']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kaheksa=input('Mis on Eesti kõige kõrgem mägi? ')
         if kaheksa==trivia['mägi']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kaheksa!=trivia['mägi']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         üheksa=input('Kui pikk on Eesti merepiir? ')
         if üheksa==trivia['meri']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if üheksa!=trivia['meri']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kümme=input('Mitu saart on Eestis? ')
         if kümme==trivia['arv']:
             trivia_score+=1
             print('Sa said õige vastus!')   
         if kümme!=trivia['arv']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         if trivia_score>7:
             print('Sa oled Trivia Pro :D Seekord oled võitja!')
-            print('Nüüd edasi viimase mängu')
+            print('"Noh nii, vastasid õigest... siin on sinu kaart nagu ma lubasin"')
             break
         if trivia_score<8:
-            print('Ei läinud nii hästi kui oleks võinud...\nOn veel arenguruumi... õpi rohkem Eesti kohta.')
+            print('Ei läinud nii hästi kui oleks võinud...\nOn veel arenguruumi...')
 
 score = 3
 
 if score == 3:
-    skoor = 0
-    fail_count = 0
-    print("""Järgmise mängu nimi on "Paintball". Võida see mäng ja oledki finish'is!""")
+    luuk_skoor=0
+    fail_count=0
+    kood=[]
+    kood.append(random.randint(1,3))
+    kood.append(random.randint(1,3))
+    kood.append(random.randint(1,3))
 
-    while skoor < 3 and fail_count != 5:
-        valik = input('Vali number 1 kuni 3: ')
-        arvut = random.randint(1, 3)
-        if valik == arvut:
-            skoor += 1
-            print('WooHoo! Sa valisid samma number kui arvuti')
-            print('Sul on nüüd', skoor, 'punkti')
-        if valik != arvut:
-            fail_count += 1
-            print('oh man! Arvut oli valinud teine number!')
-            print('See kord ei saa punkti :(')
+    print("""Leidsid treasure chest! \nAga chest on luukus \nluku kood on 3 numbrit \nsaad lukku lahti ja oledki leidnud lõpp auhinna""")
 
-        if skoor == 3:
-            print('Sa oled võitja! :)')
-            print("Jõudsid edukalt lõppu!")
-            break
-        if skoor < 3:
-            print('Kahjuks oled kaotunud :(')
-            print("Tuleb uuesti proovida.")
+    while luuk_skoor < 3 or fail_count < 5:
+        if luuk_skoor == 0:
+            valik=int(input('Vali number 1 läbi 3: '))
+            if valik!=int(kood[0]):
+                fail_count+=1
+                print('Valisid vale number! Proovige uuesti!')
+            if valik==int(kood[0]):
+                luuk_skoor+=1
+                print('WooHoo! Sa valisid õige number')
+        if luuk_skoor == 1:
+            valik=int(input('Vali number 1 läbi 3: '))
+            if valik!=int(kood[1]):
+                fail_count+=1
+                print('Valisid vale number! Proovige uuesti!')
+            if valik==int(kood[1]):
+                luuk_skoor+=1
+                print('WooHoo! Sa valisid õige number')
+        if luuk_skoor == 2:
+            valik=int(input('Vali number 1 läbi 3: '))
+            if valik!=int(kood[2]):
+                fail_count+=1
+                print('Valisid vale number! Proovige uuesti!')
+            if valik==int((kood[2])):
+                luuk_skoor+=1
+                print('WooHoo! Sa valisid õige number')
+
+
+if luuk_skoor==3:
+    print('Said lukku lahti! \nTegid treasure chest lahti ja leidsid auhinna')
+if fail_count==5:
+    print('kahjuks oled kaotunud :(')
