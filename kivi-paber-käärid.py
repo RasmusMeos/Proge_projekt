@@ -1,4 +1,6 @@
-import random
+
+                    
+
 
 võimalused = ["kivi", "paber","käärid"]
 mängude_arv = 5
@@ -50,7 +52,7 @@ while True:
         print("Proovi uuesti! Arvuti võitis selle kolme võiduni mängitava seeria.")
         print("Lõppseis jäi:",mäs,":",ars)
         mäs = 0
-        ars = 0 
+        ars = 0
 
 #if mäs > ars:
  #   print("Õnnitlused, oled võitnud kolme võiduni mängitava seeria!")
