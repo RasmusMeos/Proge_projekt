@@ -6,7 +6,7 @@ trivia={
     'linn':'Tallinn',
     'vaba':'1918',
     'saar':'Saaremaa',
-    'rekord':'-43.5',
+    'rekord':'-43,5',
     'juga':'30,5',
     'jõgi':'Võhandu',
     'mägi':'Suur Munamägi',
@@ -72,7 +72,7 @@ while trivia_score<11:
     if kaheksa!=trivia['mägi']:
         print('Valle vastus :(')
 
-    üheksa=input('Kui pikk on Eesti merepiir? ')
+    üheksa=input('Mitu kilomeetrit on Eesti merepiir? ')
     if üheksa==trivia['meri']:
         trivia_score+=1
         print('Sa said õige vastus!')
