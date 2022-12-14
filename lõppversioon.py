@@ -1,4 +1,6 @@
 import random
+import time
+
 def mängu_käivitamine():
     seljakott = []
     while True:
@@ -19,11 +21,17 @@ def aardemäng():
     kivi_paber_käärid()
     seljakott.append("münditasku")
     print("Liigud nüüd edasi") # teksti saab hiljem täiustada
+    time.sleep(1)
     täringumäng()
     seljakott.append("salapärane kivim")
+    time.sleep(5) #pikkem time sleep ennem mängija satub elukaga kokku
     #siia käib 1 vs 1 elukaga minimäng
     seljakott.append("kihv") #monster's tusk that can be used to locate the treasure on the magical map.
+    time.sleep(1)
     trivia()
+    seljakott.append("aardekaart")
+    print("Sain nüüd kaarti katte! hakkasid otsima chest'i")
+    time.sleep(3)
     chest() # dialoog chest mängus võib muuta hiljem ka
 
 
@@ -177,8 +185,10 @@ def trivia():
         'arv':'2222'
         }
 
-    print('Lõpuks jõudsid külla kus leijad üks vanatädi kes teab kuidas leida see varandus mis sa otsid, \nta ütleb sulle')
-    print(' ')
+    print('Lõpuks jõudsid külla kus leijad üks vanatädi kes teab kuidas leida see varandus mis sa otsid, ')
+    time.sleep(.5)
+    print('ta ütleb sulle')
+    time.sleep(.5)
     print('"Kui soovid varandus leida, on sul aardekaart vaja. \nKui saate 10-st küsimusest vähemalt 8 õigesti, ma annan seda sulle"')
 
     while trivia_score<11:
@@ -256,7 +266,9 @@ def trivia():
             print('"Noh nii, vastasid õigest... siin on sinu kaart nagu ma lubasin"')
             break
         if trivia_score<8:
-            print('Ei läinud nii hästi kui oleks võinud...\nOn veel arenguruumi... õpi rohkem Eesti kohta.')
+            print('Ei läinud nii hästi kui oleks võinud...')
+            time.sleep(.5)
+            print('On veel arenguruumi... õpi rohkem Eesti kohta.')
 
 def chest():
     luuk_skoor=0
@@ -266,7 +278,15 @@ def chest():
     kood.append(random.randint(1,3))
     kood.append(random.randint(1,3))
 
-    print("""Leidsid treasure chest! \nAga chest on luukus \nluku kood on 3 numbrit \nsaad lukku lahti ja oledki leidnud lõpp auhinna""")
+    print('Leidsid treasure chest!')
+    time.sleep(.5)
+    print('Aga chest on luukus')
+    time.sleep(.5)
+    print('luku kood on 3 numbrit')
+    time.sleep(.5)
+    print('saad lukku lahti ja oledki leidnud lõpp auhinna')
+    time.sleep(.5)
+    print('\n')*5
 
     while luuk_skoor<3 or fail_count<5:   
         if luuk_skoor == 0:
