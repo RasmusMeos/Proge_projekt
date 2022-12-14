@@ -24,7 +24,7 @@ def aardemäng():
     #siia käib 1 vs 1 elukaga minimäng
     seljakott.append("kihv") #monster's tusk that can be used to locate the treasure on the magical map.
     trivia()
-    #siia tuleks viimane mäng, kus tuleb chest unlock'ida
+    chest() # dialoog chest mängus võib muuta hiljem ka
 
 
 def kivi_paber_käärid():
@@ -161,7 +161,8 @@ def täringumäng():
 
 def trivia():
    
-   # 10 ? ja 8 peab olema õige et võita
+   # 10 ? ja 8 peab olema õige et võita  Jah
+
 
     trivia_score=0
     trivia={
@@ -255,6 +256,47 @@ def trivia():
         if trivia_score<8:
             print('Ei läinud nii hästi kui oleks võinud...\nOn veel arenguruumi... õpi rohkem Eesti kohta.')
 
+def chest():
+    luuk_skoor=0
+    fail_count=0
+    kood=[]
+    kood.append(random.randint(1,3))
+    kood.append(random.randint(1,3))
+    kood.append(random.randint(1,3))
+
+    print("""Leidsid treasure chest! \nAga chest on luukus \nluku kood on 3 numbrit \nsaad lukku lahti ja oledki leidnud lõpp auhinna""")
+
+    while luuk_skoor<3 or fail_count<5:   
+        if luuk_skoor == 0:
+            valik=int(input('Vali number 1 läbi 3: '))
+            if valik!=int(kood[0]):
+                fail_count+=1
+                print('Valisid vale number! Proovige uuesti!')
+            if valik==int(kood[0]):
+                luuk_skoor+=1
+                print('Sa valisid õige number!')
+        if luuk_skoor == 1:
+            valik=int(input('Vali number 1 läbi 3: '))
+            if valik!=int(kood[1]):
+                fail_count+=1
+                print('Valisid vale number! Proovige uuesti!')
+            if valik==int(kood[1]):
+                luuk_skoor+=1
+                print('Sa valisid õige number!')
+        if luuk_skoor == 2:
+            valik=int(input('Vali number 1 läbi 3: '))
+            if valik!=int(kood[2]):
+                fail_count+=1
+                print('Valisid vale number! Proovige uuesti!')
+            if valik==int((kood[2])):
+                luuk_skoor+=1
+                print('Sa valisid õige number!')
+
+
+    if luuk_skoor==3:
+        print('Imeline! Said luuk lahti!')
+    if luuk_skoor<3:
+        print('kahjuks ei saanud luuk lahti, pead uuesti proovima')
 
 def mängi_uuesti():
     while True:
