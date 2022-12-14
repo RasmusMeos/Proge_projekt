@@ -176,7 +176,10 @@ def trivia():
         'meri':'780',
         'arv':'2222'
         }
-    print('Oled joudnud Eesti kohta Trivia mängu! Kui saate 10-st küsimusest vähemalt 8 õigesti, oled sa võitnud.')
+
+    print('Lõpuks jõudsid külla kus leijad üks vanatädi kes teab kuidas leida see varandus mis sa otsid, \nta ütleb sulle')
+    print(' ')
+    print('"Kui soovid varandus leida, on sul aardekaart vaja. \nKui saate 10-st küsimusest vähemalt 8 õigesti, ma annan seda sulle"')
 
     while trivia_score<11:
         üks=input('Mis on Eesti pealinn? ')
@@ -184,74 +187,73 @@ def trivia():
             trivia_score+=1
             print('Sa said õige vastus!')
         if üks!=trivia['linn']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kaks=input('Mis aastal kuulutati välja Eesti vabariik? ')
         if kaks==trivia['vaba']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kaks!=trivia['vaba']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kolm=input('Mis on Eestil kõige suurem saar? ')
         if kolm==trivia['saar']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kolm!=trivia['saar']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         neli=input('Mis on Eestil kõige vanem linn? ')
         if neli==trivia['linn']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if neli!=trivia['linn']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         viis=input('Mis oli Eesti külmarekord? ')
         if viis==trivia['rekord']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if viis!=trivia['rekord']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kuus=input('Mitu meetrit on kõige kõrgem juga Eestis? ')
         if kuus==trivia['juga']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kuus!=trivia['juga']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         seitse=input('Mis on kõige pikem jõgi Eestis? ')
         if seitse==trivia['jõgi']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if seitse!=trivia['jõgi']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kaheksa=input('Mis on Eesti kõige kõrgem mägi? ')
         if kaheksa==trivia['mägi']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if kaheksa!=trivia['mägi']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         üheksa=input('Mitu kilomeetrit pikk on Eesti merepiir? ')
         if üheksa==trivia['meri']:
             trivia_score+=1
             print('Sa said õige vastus!')
         if üheksa!=trivia['meri']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         kümme=input('Mitu saart on Eestis? ')
         if kümme==trivia['arv']:
             trivia_score+=1
             print('Sa said õige vastus!')   
         if kümme!=trivia['arv']:
-            print('Valle vastus :(')
+            print('Valle!')
 
         if trivia_score>7:
-            print('Sa oled Trivia Pro :D Seekord oled võitja!')
-            print('Nüüd edasi viimase mängu')
+            print('"Noh nii, vastasid õigest... siin on sinu kaart nagu ma lubasin"')
             break
         if trivia_score<8:
             print('Ei läinud nii hästi kui oleks võinud...\nOn veel arenguruumi... õpi rohkem Eesti kohta.')
