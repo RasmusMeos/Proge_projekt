@@ -6,6 +6,7 @@ def mängu_käivitamine():
     while True:
         alusta = str(input("Tere tulemast aardejahi mängule! Kas soovid mängu alustada? (jah/ei): "))
         if alusta == "jah":
+
             aardemäng()
             mängi_uuesti()
             break
@@ -18,6 +19,15 @@ def mängu_käivitamine():
 def aardemäng():
     
     seljakott = []
+    print("Selles mängus oled sina, mängija, Eestis seiklev aardeotsija, kes otsib kadunud laegast, milles peitub suur rikkus!")
+    time.sleep(2)
+    print("Kõigepealt astud sa lähedal olevasse kõrtsi, et saada vihjeid aarde asukoha kohta...")
+    time.sleep(2)
+    print("Kõrtsi astudes näed laudasid, mille taga saab mängida erinevaid mänge.")
+    print("""""Tere võõras! Tule mängime ühe kivi-paber-käärid mängu!"" kostab esimese laua tagant.""" )
+    time.sleep(2)
+    print("""""Mul on sulle ka kuldmündi tasku, kui mind võidad!"" Raha tuleb kindlasti kasuks - mängime!""")
+    time.sleep(2)
     kivi_paber_käärid()
     seljakott.append("münditasku")
     print("Liigud nüüd edasi") # teksti saab hiljem täiustada
@@ -36,18 +46,20 @@ def kivi_paber_käärid():
 
     mäs = 0 # mängija võite
     ars = 0 #arvuti võite
-
+    print("See kivi-paber-käärid mäng kestab kuni kolme võiduni. Kui võidame, saame kuldmünte. Kes teab, ehk läheb hiljem vaja... ")
     while True:
         mängija_valik = input("Vali kas kivi, paber või käärid: ")
+        time.sleep(1)
         arvuti_valik = random.choice(võimalused)
 
         if mängija_valik == arvuti_valik:
-            print("Tegid arvutiga sama valiku. Te jäite viiki!")
+            print("Tegid vastasega sama valiku. Te jäite viiki!")
+            
             print("Seis on",mäs,":",ars)
 
         elif mängija_valik == "kivi" and arvuti_valik == "paber":
             ars += 1
-            print("Paber katab kivi - arvuti võit!")
+            print("Paber katab kivi - vastase võit!")
             print("Seis on",mäs,":",ars)
         elif mängija_valik == "kivi" and arvuti_valik == "käärid":
             mäs += 1
