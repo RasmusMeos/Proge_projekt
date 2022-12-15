@@ -2,11 +2,11 @@ import random
 import time
 
 def mängu_käivitamine():
-    seljakott = []
+    seljakott = ["revolver", "nuga"]
     while True:
         alusta = str(input("Tere tulemast aardejahi mängule! Kas soovid mängu alustada? (jah/ei): "))
+        time.sleep(2)
         if alusta == "jah":
-
             aardemäng()
             mängi_uuesti()
             break
@@ -24,19 +24,50 @@ def aardemäng():
     print("Kõigepealt astud sa lähedal olevasse kõrtsi, et saada vihjeid aarde asukoha kohta...")
     time.sleep(2)
     print("Kõrtsi astudes näed laudasid, mille taga saab mängida erinevaid mänge.")
-    print("""""Tere võõras! Tule mängime ühe kivi-paber-käärid mängu!"" kostab esimese laua tagant.""" )
+    print(""""Tere võõras! Tule mängime ühe kivi-paber-käärid mängu!" kostab esimese laua tagant.""" )
     time.sleep(2)
-    print("""""Mul on sulle ka kuldmündi tasku, kui mind võidad!"" Raha tuleb kindlasti kasuks - mängime!""")
+    print(""""Mul on sulle ka kuldmündi tasku, kui mind võidad!" Raha tuleb kindlasti kasuks - mängime!""")
     time.sleep(2)
     kivi_paber_käärid()
     seljakott.append("münditasku")
-    print("Liigud nüüd edasi") # teksti saab hiljem täiustada
+    print("Kuldmündi tasku võrra rikkamad saame kõrtsis edasi vaadata.")
+    time.sleep(2)
+    print('"Üks salapärane hääl kõlab kõrtsi nurgast: "Mul sulle raha pole pakkuda, aga kui mängid minuga täringumängu ja võidad, saad midagi hinnalisemat."')
+    time.sleep(3)
     täringumäng()
+    print(""""Raha mul sulle anda ei ole, aga võta see hõbekuul. Kes teab?, võib vaja minna." kostab tundmatu.""")
+    time.sleep(2)
+    print("Pärast mõningat uurimist selgub, et naaberkülas elab tädike, kellel võib olla maagiline kaart, mida keegi peale tema lugeda ei oska.")
+    time.sleep(2)
+    print("Asi ei tundu paljulubav, kuid ehk saab sealt kandist vihjeid, mis aitavad rikkusele lähemale!")
+    time.sleep(4)
     seljakott.append("hõbekuul")
     võitlus()
+    print("Lamavat libahunti silmitsedes märkad tema läikivat kihva. Sikutad selle küljest ja haarad kaasa.")
+    time.sleep(2)
+    print("Kunagi olid kuulnud, et libahundi kihval on maagilised võimed. Ehk see aitab meid!")
+    time.sleep(2)
+    print("Laanest välja jõudes on vahepeal hommik tulnud. Aeg suunduda naaberkülla.")
+    time.sleep(2)
     seljakott.append("kihv") #monster's tusk that can be used to locate the treasure on the magical map.
     trivia()
-    chest() # dialoog chest mängus võib muuta hiljem ka
+    print("Haarad õhinal kaardi, kuid ei loe midagi välja. Siis sulle meenub libahundi kihv.")
+    time.sleep(2)
+    print("Purustad jala all kihva ja puistad selle kihvale ja voilaa! Kaardile ilmub teekond aardeni.")
+    time.sleep(2)
+    print("Jõudnud sihtkohta, märkad koobast, mille ees seisab valvur. Oh ei, keegi on selle juba leidnud...")
+    time.sleep(2)
+    print("Lähemal uurimisel aga selgub, et mees ootab seal võlgnikku, kellelt võlga nõuda.")
+    time.sleep(2)
+    print("Pakud talle kuldmündi taskut, mille sisu on kindlasti rohkem väärt, kui ta on nõus siit lahkuma.")
+    time.sleep(2)
+    print("Mees võtab tasku vastu ise rohkem pärimata ja lahkub.")
+    time.sleep(2)
+    chest()# dialoog chest mängus võib muuta hiljem ka
+    print("Oled leidnud rikkuse! Sellega on sinu teekond lõppenud.")
+    time.sleep(3)
+    print("MÄNGU LÕPP")
+    time.sleep(3)
 
 
 def kivi_paber_käärid():
@@ -47,6 +78,7 @@ def kivi_paber_käärid():
     mäs = 0 # mängija võite
     ars = 0 #arvuti võite
     print("See kivi-paber-käärid mäng kestab kuni kolme võiduni. Kui võidame, saame kuldmünte. Kes teab, ehk läheb hiljem vaja... ")
+    time.sleep(2)
     while True:
         mängija_valik = input("Vali kas kivi, paber või käärid: ")
         time.sleep(1)
@@ -54,43 +86,64 @@ def kivi_paber_käärid():
 
         if mängija_valik == arvuti_valik:
             print("Tegid vastasega sama valiku. Te jäite viiki!")
-            
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
-
+            time.sleep(0.5)
+            
         elif mängija_valik == "kivi" and arvuti_valik == "paber":
             ars += 1
             print("Paber katab kivi - vastase võit!")
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
+            time.sleep(0.5)
+            
         elif mängija_valik == "kivi" and arvuti_valik == "käärid":
             mäs += 1
             print("Kivi lõhub käärid - sinu võit!")
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
+            time.sleep(0.5)
         
         elif mängija_valik == "käärid" and arvuti_valik == "paber":
             mäs += 1
             print("Käärid lõikavad paberi - sinu võit!")
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
+            time.sleep(0.5)
+            
         elif mängija_valik == "käärid" and arvuti_valik == "kivi":
             ars += 1
-            print("Kivi lõhub käärid - arvuti võit!")
+            print("Kivi lõhub käärid - vastase võit!")
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
+            time.sleep(0.5)
 
         elif mängija_valik == "paber" and arvuti_valik == "kivi":
             mäs += 1
             print("Paber katab kivi - sinu võit!")
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
+            time.sleep(0.5)
+            
         elif mängija_valik == "paber" and arvuti_valik == "käärid":
             ars += 1
-            print("Käärid lõikavad paberi - arvuti võit!")
+            print("Käärid lõikavad paberi - vastase võit!")
+            time.sleep(0.5)
             print("Seis on",mäs,":",ars)
+            time.sleep(0.5)
 
         if (mäs == võite_vaja or ars == võite_vaja) and mäs > ars:
             print("Õnnitlused, oled võitnud kolme võiduni mängitava seeria!")
+            time.sleep(2)
             print("Lõppseis jäi:",mäs,":",ars)
+            time.sleep(2)
             break
+        
         elif (mäs == võite_vaja or ars == võite_vaja) and mäs < ars:
-            print("Proovi uuesti! Arvuti võitis selle kolme võiduni mängitava seeria.")
+            print("Proovi uuesti! Vastane võitis selle kolme võiduni mängitava seeria.")
+            time.sleep(2)
             print("Lõppseis jäi:",mäs,":",ars)
+            time.sleep(2)
             mäs = 0
             ars = 0
 
@@ -100,7 +153,12 @@ def täringumäng():
     arvuti_skoor = 0
     maksimum_punktid = 21
     täringu_küljed = [1,2,3,4,5,6]
-    print("Selle teekonna alguses oled sattunud täringumängu laua taha. Ülesandeks on rinda pista arvutiga ning visata täringuid. \nKui saad enne arvutit 21 silma täis, oled mängu võitnud ning sinu skoorile lisandub 1. Seejärel saad edasi liikuda.")
+    print("Istume salapärase isiku laua taha. Viskame koos täringuid kuni üks meist saab enne täpselt 21 silma.")
+    time.sleep(2)
+    print("""Üle 21 silma visates lähed "lõhki" ja tuleb uuesti alustada.""")
+    time.sleep(2)
+    print("Kaotades tuleb taaskord uuesti mängida kuni oleme võidukad.")
+    time.sleep(2)
 
     while True:
         
@@ -109,46 +167,60 @@ def täringumäng():
         veereta = input("Sisesta Enter, et veeretada täringut: ")
         if veereta == "":
             print("Sina veeretasid:",mängija_tulemus)
-            print("Arvuti veeretas:",arvuti_tulemus)
+            time.sleep(0.5)
+            print("Tundmatu veeretas:",arvuti_tulemus)
+            time.sleep(0.5)
 
 
             if mängija_tulemus == arvuti_tulemus:
                 mängija_skoor += mängija_tulemus
                 arvuti_skoor += arvuti_tulemus
                 if mängija_skoor < maksimum_punktid and arvuti_skoor < maksimum_punktid:
-                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja arvutil on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
+                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja tundmatul on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
+                    time.sleep(1)
                 elif mängija_skoor < maksimum_punktid and arvuti_skoor > maksimum_punktid:
-                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma, aga arvuti läks lõhki! Tal tuleb uuesti alustada.")
+                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma, aga tundmatu läks lõhki! Tal tuleb uuesti alustada.")
+                    time.sleep(1)
                 elif mängija_skoor > maksimum_punktid and arvuti_skoor < maksimum_punktid:
-                    print("Läksite lõhki ja teil tuleb uuesti alustada! Arvutil vaja visata veel", maksimum_punktid-arvuti_skoor, "silma.")
+                    print("Läksite lõhki ja teil tuleb uuesti alustada! Tundmatul vaja visata veel", maksimum_punktid-arvuti_skoor, "silma.")
+                    time.sleep(1)
                 elif mängija_skoor > maksimum_punktid and arvuti_skoor > maksimum_punktid:
                     print("Läksite mõlemad lõhki ning teil tuleb uuesti alustada!")
+                    time.sleep(1)
                     
                     
             elif mängija_tulemus < arvuti_tulemus:
                 mängija_skoor += mängija_tulemus
                 arvuti_skoor += arvuti_tulemus
                 if mängija_skoor < maksimum_punktid and arvuti_skoor < maksimum_punktid:
-                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja arvutil on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
+                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja tundmatul on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
+                    time.sleep(1)
                 elif mängija_skoor < maksimum_punktid and arvuti_skoor > maksimum_punktid:
-                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma, aga arvuti läks lõhki! Tal tuleb uuesti alustada.")
+                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma, aga tundmatu läks lõhki! Tal tuleb uuesti alustada.")
+                    time.sleep(1)
                 elif mängija_skoor > maksimum_punktid and arvuti_skoor < maksimum_punktid:
-                    print("Läksite lõhki ja teil tuleb uuesti alustada! Arvutil vaja visata veel", maksimum_punktid-arvuti_skoor, "silma.")
+                    print("Läksite lõhki ja teil tuleb uuesti alustada! Tundmatul vaja visata veel", maksimum_punktid-arvuti_skoor, "silma.")
+                    time.sleep(1)
                 elif mängija_skoor > maksimum_punktid and arvuti_skoor > maksimum_punktid:
                     print("Läksite mõlemad lõhki ning teil tuleb uuesti alustada!")
+                    time.sleep(1)
                     
 
             elif mängija_tulemus > arvuti_tulemus:
                 mängija_skoor += mängija_tulemus
                 arvuti_skoor += arvuti_tulemus
                 if mängija_skoor < maksimum_punktid and arvuti_skoor < maksimum_punktid:
-                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja arvutil on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
+                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma ja tundmatul on vaja vistata veel",maksimum_punktid-arvuti_skoor,"silma.")
+                    time.sleep(1)
                 elif mängija_skoor < maksimum_punktid and arvuti_skoor > maksimum_punktid:
-                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma, aga arvuti läks lõhki! Tal tuleb uuesti alustada.")
+                    print("Teil on vaja visata veel",maksimum_punktid-mängija_skoor,"silma, aga tundmatu läks lõhki! Tal tuleb uuesti alustada.")
+                    time.sleep(1)
                 elif mängija_skoor > maksimum_punktid and arvuti_skoor < maksimum_punktid:
-                    print("Läksite lõhki ja teil tuleb uuesti alustada! Arvutil vaja visata veel", maksimum_punktid-arvuti_skoor, "silma.")
+                    print("Läksite lõhki ja teil tuleb uuesti alustada! Tundmatul vaja visata veel", maksimum_punktid-arvuti_skoor, "silma.")
+                    time.sleep(1)
                 elif mängija_skoor > maksimum_punktid and arvuti_skoor > maksimum_punktid:
                     print("Läksite mõlemad lõhki ning teil tuleb uuesti alustada!")
+                    time.sleep(1)
                     
 
                 
@@ -159,18 +231,23 @@ def täringumäng():
                 arvuti_skoor = 0           
             
             if mängija_skoor == maksimum_punktid and arvuti_tulemus != maksimum_punktid:
-                print("Hästi tehtud! Said arvutist enne täpselt 21 silma kokku ning seega kuulub mänguvõit sulle!")
-                print("Lõpptulemuseks jäi",mängija_skoor,"silma teile ja",arvuti_skoor,"silma arvutile.")
+                print("Hästi tehtud! Said tundmatust enne täpselt 21 silma kokku ning seega kuulub mänguvõit sulle!")
+                time.sleep(2)
+                print("Lõpptulemuseks jäi",mängija_skoor,"silma teile ja",arvuti_skoor,"silma tundmatule.")
+                time.sleep(2)
                 break
             if mängija_skoor != maksimum_punktid and arvuti_tulemus == maksimum_punktid:
                 mängija_skoor = 0
                 arvuti_skoor = 0
-                print("Lõpptulemuseks jäi",mängija_skoor,"silma teile ja",arvuti_skoor,"silma arvutile.")
-                print("Proovige uuesti! Arvuti sai teist enne täpselt 21 silma kokku.")
+                print("Lõpptulemuseks jäi",mängija_skoor,"silma teile ja",arvuti_skoor,"silma tundmatule.")
+                time.sleep(2)
+                print("Proovige uuesti! Tundmatu sai teist enne täpselt 21 silma kokku.")
+                time.sleep(2)
             if mängija_skoor == maksimum_punktid and arvuti_tulemus == maksimum_punktid:
                 mängija_skoor = 0
                 arvuti_skoor = 0
                 print("Ime, te jäite viiki! Kahjuks tuleb siiski mäng võita.")
+                time.sleep(2)
 
 
 def võitlus():
@@ -185,13 +262,25 @@ def võitlus():
     padruneid = 6
     tervenda = 75
     moona = 1
+    print("Tee naaberkülani viib läbi paksu laane. Vahepeal on kätte jõudnud öö ning taevas särab täiskuu...")
+    time.sleep(2)
+    print("Järsku on kuulda tarduma panevat ulgumist ja seejärel möiret! Läbi paksu metsa hüppab teele libahunt!")
+    time.sleep(2)
+    print("Vöö pealt on võtta revolver ja nuga, millega end kaitsta. Moona jagub sul 12 lasuks, kusjuures revolver on juba 6 kuuliga valmis laetud.")
+    time.sleep(3)
+    print("Ennast saad ühe korra tervendada ka võlujoogiga, mis põues leidub. Ehk on abi ka kõrtsist saadud esemetest ;)")
+    time.sleep(2)
+    print("Libahundist tuleb jagu saada, vastasel juhul on lood kehvasti...")
+    time.sleep(2)
+    
 
     while libahunt_elud > 0 and mängija_elud > 0:
         tegevus = str(input("Vali sulgudes numbriga tegevus: lase revolvriga(1), torka noaga(2), tervenda ennast(3), lae revolvrit(4): "))
         rünnak = random.choices(libahunt_rünnak, weights=(30,70), k=1)
         if tegevus == "hõbekuul":
             libahunt_elud = 0
-            print("Kasutasid revolvris hõbekuuli ning libahunt on haarab rinnust ning kukub selili. Oled tapnud libahundi!")
+            print("Kasutasid revolvris hõbekuuli ning *põmm* - libahunt haarab rinnust ning langeb vaikselt. Oled tapnud libahundi!")
+            time.sleep(1)
             break
         if tegevus == "1" and padruneid > 0 and (moona > 0 or moona == 0):
             libahunt_elud -= tulista
@@ -240,12 +329,12 @@ def võitlus():
             time.sleep(1)
             
         if libahunt_elud <= 0 and mängija_elud > 0:
-            print("Libahunt tuigerdab ja kukub selili! Oled tapnud libahundi!")
-            time.sleep(1)
+            print("Libahunt on nähtavalt kurnatud ja haavatud. Ta tuigerdab ja kukub selili! Oled tapnud libahundi!")
+            time.sleep(2)
             break
         elif libahunt_elud > 0 and mängija_elud <= 0:
-            print("Libahunt sai sinust jagu! Paar hingetõmmet ja proovi uuesti!")
-            time.sleep(1)
+            print("Libahunt sai sinust jagu! See oli kõigest halb uni ning leiad end taas libahundi eest...")
+            time.sleep(2)
             mängija_elud = 100
             libahunt_elud = 250
             padruneid = 0
@@ -262,7 +351,11 @@ def võitlus():
 def trivia():
    
    # 10 ? ja 8 peab olema õige et võita  Jah
-
+#     print("Kohapeal selgub, et mälumängus osalemiseks on vaja sisenemistasu.")
+#     time.sleep(2)
+#     print("Pärast kuldmündi tasku tühjendamist lubatakse sind mängima.")
+#     time.sleep(2)
+#     print("Maagilise kaardi võitmiseks on vaja vastata 8-le küsimusele 10-st õigesti. Vastasel juhul tuleb uuesti mängu proovida.")
 
     trivia_score=0
     trivia={
@@ -277,8 +370,8 @@ def trivia():
         'arv':'2222'
         }
 
-    print('Lõpuks jõudsid külla kus leijad üks vanatädi kes teab kuidas leida see varandus mis sa otsid, \nta ütleb sulle')
-    print(' ')
+    print('Lõpuks jõudsid külla kus leiad üks vanatädi kes teab kuidas leida see varandus mis sa otsid, \nta ütleb sulle')
+    time.sleep(2)
     print('"Kui soovid varandus leida, on sul aardekaart vaja. \nKui saate 10-st küsimusest vähemalt 8 õigesti, ma annan seda sulle"')
 
     while trivia_score<11:
@@ -366,7 +459,7 @@ def chest():
     kood.append(random.randint(1,3))
     kood.append(random.randint(1,3))
 
-    print("""Leidsid treasure chest! \nAga chest on luukus \nluku kood on 3 numbrit \nsaad lukku lahti ja oledki leidnud lõpp auhinna""")
+    print("""Leidsid treasure chest! \nAga chest on lukus \nluku kood on 3 numbrit \nsaad lukku lahti ja oledki leidnud rikkuse!""")
 
     while luuk_skoor<3 or fail_count<5:   
         if luuk_skoor == 0:
@@ -395,10 +488,11 @@ def chest():
                 print('Sa valisid õige number!')
 
 
-    if luuk_skoor==3:
-        print('Imeline! Said luuk lahti!')
-    if luuk_skoor<3:
-        print('kahjuks ei saanud luuk lahti, pead uuesti proovima')
+        if luuk_skoor==3:
+            print('Imeline! Said luku lahti!')
+            break
+        if luuk_skoor<3:
+            print('kahjuks ei saanud lukku lahti, pead uuesti proovima')
 
 def mängi_uuesti():
     while True:
